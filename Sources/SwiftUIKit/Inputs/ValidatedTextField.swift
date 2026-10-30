@@ -21,15 +21,15 @@ public struct ValidatedTextField: View {
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            if isSecure {
-                SecureField(title, text: $text)
-                    .textFieldStyle(.roundedBorder)
-            } else {
-                TextField(title, text: $text)
-                    .textFieldStyle(.roundedBorder)
-                    .autocorrectionDisabled()
-                    .textInputAutocapitalization(.never)
+            Group {
+                if isSecure {
+                    SecureField(title, text: $text)
+                } else {
+                    TextField(title, text: $text)
+                        .autocorrectionDisabled()
+                }
             }
+            .textFieldStyle(.roundedBorder)
 
             if let errorMessage, !errorMessage.isEmpty {
                 Text(errorMessage)
