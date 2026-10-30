@@ -4,20 +4,17 @@ import SwiftUI
 public struct ValidatedTextField: View {
     let title: String
     @Binding var text: String
-    var keyboardType: UIKeyboardType = .default
     var isSecure: Bool = false
     var errorMessage: String?
 
     public init(
         _ title: String,
         text: Binding<String>,
-        keyboardType: UIKeyboardType = .default,
         isSecure: Bool = false,
         errorMessage: String? = nil
     ) {
         self.title = title
         self._text = text
-        self.keyboardType = keyboardType
         self.isSecure = isSecure
         self.errorMessage = errorMessage
     }
@@ -29,7 +26,6 @@ public struct ValidatedTextField: View {
                     .textFieldStyle(.roundedBorder)
             } else {
                 TextField(title, text: $text)
-                    .keyboardType(keyboardType)
                     .textFieldStyle(.roundedBorder)
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)

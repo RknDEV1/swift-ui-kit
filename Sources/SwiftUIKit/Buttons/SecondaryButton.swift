@@ -16,7 +16,6 @@ public struct SecondaryButton: View {
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity)
                 .frame(height: 50)
-                .background(Color(.systemBackground))
                 .foregroundStyle(Color.accentColor)
                 .overlay(
                     RoundedRectangle(cornerRadius: 12, style: .continuous)

@@ -12,7 +12,7 @@ public struct CardView<Content: View>: View {
         content
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color(.secondarySystemBackground))
+            .background(Color.secondary.opacity(0.12))
             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
     }
 }
