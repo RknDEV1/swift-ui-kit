@@ -7,6 +7,8 @@ Modern and reusable **SwiftUI** components for building clean native iOS apps.
 [![Platform](https://img.shields.io/badge/Platform-iOS%2017%2B%20%7C%20macOS%2014%2B-blue.svg)](https://developer.apple.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
+> Also available in Portuguese: [README.pt-BR.md](README.pt-BR.md)
+
 ---
 
 ## Components
@@ -33,8 +35,6 @@ Modern and reusable **SwiftUI** components for building clean native iOS apps.
 
 ## Installation
 
-### Swift Package Manager
-
 ```swift
 dependencies: [
     .package(url: "https://github.com/RknDEV1/swift-ui-kit.git", from: "0.1.0")
@@ -55,11 +55,7 @@ Or via Xcode:
 
 ```swift
 PrimaryButton("Continue", isLoading: false) {
-    // perform action
-}
-
-PrimaryButton("Saving...", isLoading: true) {
-    // disabled while loading
+    // action
 }
 ```
 
@@ -67,40 +63,22 @@ PrimaryButton("Saving...", isLoading: true) {
 
 ```swift
 SecondaryButton("Cancel") {
-    // perform action
+    // action
 }
 ```
 
 ### Validated Text Field
 
 ```swift
-@State private var email = ""
-@State private var emailError: String?
-
-ValidatedTextField(
-    "Email",
-    text: $email,
-    errorMessage: emailError
-)
-
-ValidatedTextField(
-    "Password",
-    text: $password,
-    isSecure: true,
-    errorMessage: passwordError
-)
+ValidatedTextField("Email", text: $email, errorMessage: emailError)
+ValidatedTextField("Password", text: $password, isSecure: true)
 ```
 
 ### Card View
 
 ```swift
 CardView {
-    VStack(alignment: .leading, spacing: 8) {
-        Text("Title")
-            .font(.headline)
-        Text("Supporting content goes here.")
-            .foregroundStyle(.secondary)
-    }
+    Text("Card content")
 }
 ```
 
@@ -108,17 +86,12 @@ CardView {
 
 ```swift
 ToastView("Saved successfully", systemImage: "checkmark.circle")
-
-ToastView("Something went wrong", systemImage: "xmark.circle")
 ```
 
 ### Section Header
 
 ```swift
-SectionHeader(
-    "Settings",
-    subtitle: "Manage your preferences"
-)
+SectionHeader("Settings", subtitle: "Manage your preferences")
 ```
 
 ---
@@ -134,17 +107,10 @@ struct LoginView: View {
     var body: some View {
         VStack(spacing: 20) {
             SectionHeader("Welcome", subtitle: "Sign in to continue")
-
             ValidatedTextField("Email", text: $email)
             ValidatedTextField("Password", text: $password, isSecure: true)
-
-            PrimaryButton("Sign In", isLoading: isLoading) {
-                // login action
-            }
-
-            SecondaryButton("Create Account") {
-                // navigate
-            }
+            PrimaryButton("Sign In", isLoading: isLoading) { }
+            SecondaryButton("Create Account") { }
         }
         .padding()
     }
@@ -158,41 +124,18 @@ struct LoginView: View {
 ```
 Sources/SwiftUIKit/
 ├── Buttons/
-│   ├── PrimaryButton.swift
-│   └── SecondaryButton.swift
 ├── Inputs/
-│   └── ValidatedTextField.swift
 ├── Cards/
-│   └── CardView.swift
 ├── Feedback/
-│   └── ToastView.swift
 └── Layout/
-    └── SectionHeader.swift
 ```
-
----
-
-## Design Principles
-
-- **Simple API** – Easy to use with sensible defaults
-- **Consistent styling** – Shared corner radius, spacing and colors
-- **Composable** – Works well with other SwiftUI views
-- **Lightweight** – No external dependencies
 
 ---
 
 ## Changelog
 
-See [CHANGELOG.md](CHANGELOG.md) for release history.
-
----
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
-This project is released under the **MIT License**. See [LICENSE](LICENSE) for details.
-
----
-
-## Contributing
-
-Contributions are welcome. Feel free to open issues or submit pull requests.
+MIT License. See [LICENSE](LICENSE).
