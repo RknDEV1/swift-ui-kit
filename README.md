@@ -1,37 +1,37 @@
 # Swift UI Kit
 
-Modern and reusable **SwiftUI** components for native iOS apps.
+Componentes **SwiftUI** modernos e reutilizáveis para aplicativos iOS nativos.
 
-## Components
+## Componentes
 
-- `PrimaryButton` – Main action button with loading state
-- `SecondaryButton` – Outlined secondary button
-- `ValidatedTextField` – Text field with error message support
-- `CardView` – Simple card container
-- `ToastView` – Lightweight toast / banner
-- `SectionHeader` – Consistent section titles
+- `PrimaryButton` – Botão principal com estado de loading
+- `SecondaryButton` – Botão secundário (outline)
+- `ValidatedTextField` – Campo de texto com suporte a mensagem de erro
+- `CardView` – Container de card simples
+- `ToastView` – Toast / banner leve
+- `SectionHeader` – Cabeçalhos de seção consistentes
 
-## Requirements
+## Requisitos
 
 - iOS 17+
 - macOS 14+
 - Swift 5.9+
 
-## Installation
+## Instalação
 
 ```swift
 .package(url: "https://github.com/RknDEV1/swift-ui-kit.git", from: "0.1.0")
 ```
 
-## Usage
+## Exemplos de Uso
 
 ```swift
 PrimaryButton("Continuar", isLoading: false) {
-    // action
+    // ação
 }
 
 SecondaryButton("Cancelar") {
-    // action
+    // ação
 }
 
 ValidatedTextField("E-mail", text: $email, errorMessage: emailError)
@@ -45,7 +45,7 @@ ToastView("Salvo com sucesso", systemImage: "checkmark.circle")
 SectionHeader("Configurações", subtitle: "Gerencie suas preferências")
 ```
 
-## Structure
+## Estrutura
 
 ```
 Sources/SwiftUIKit/
@@ -56,6 +56,14 @@ Sources/SwiftUIKit/
 └── Layout/
 ```
 
-## License
+## Licença
 
 MIT
+
+---
+
+# Swift UI Kit (English)
+
+Modern and reusable **SwiftUI** components for native iOS apps.
+
+See the sections above for components, requirements, installation and usage examples.
