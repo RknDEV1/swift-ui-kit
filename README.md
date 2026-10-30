@@ -2,6 +2,7 @@
 
 Modern and reusable **SwiftUI** components for building clean native iOS apps.
 
+[![CI](https://github.com/RknDEV1/swift-ui-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/RknDEV1/swift-ui-kit/actions/workflows/ci.yml)
 [![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)](https://swift.org)
 [![Platform](https://img.shields.io/badge/Platform-iOS%2017%2B%20%7C%20macOS%2014%2B-blue.svg)](https://developer.apple.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -177,6 +178,12 @@ Sources/SwiftUIKit/
 - **Consistent styling** – Shared corner radius, spacing and colors
 - **Composable** – Works well with other SwiftUI views
 - **Lightweight** – No external dependencies
+
+---
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for release history.
 
 ---
 
