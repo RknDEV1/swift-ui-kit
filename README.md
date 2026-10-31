@@ -1,13 +1,13 @@
 # Swift UI Kit
 
-Modern and reusable **SwiftUI** components for building clean native iOS apps.
+Modern reusable **SwiftUI** components for native iOS apps.
 
 [![CI](https://github.com/RknDEV1/swift-ui-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/RknDEV1/swift-ui-kit/actions/workflows/ci.yml)
 [![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)](https://swift.org)
 [![Platform](https://img.shields.io/badge/Platform-iOS%2017%2B%20%7C%20macOS%2014%2B-blue.svg)](https://developer.apple.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> Also available in Portuguese: [README.pt-BR.md](README.pt-BR.md)
+> Portuguese: [README.pt-BR.md](README.pt-BR.md)
 
 ---
 
@@ -15,127 +15,41 @@ Modern and reusable **SwiftUI** components for building clean native iOS apps.
 
 | Component | Description |
 |-----------|-------------|
-| `PrimaryButton` | Main action button with loading state |
-| `SecondaryButton` | Outlined secondary button |
-| `ValidatedTextField` | Text field with error message support |
-| `CardView` | Simple reusable card container |
-| `ToastView` | Lightweight toast / banner |
-| `SectionHeader` | Consistent section title and subtitle |
-
----
-
-## Requirements
-
-- iOS 17.0+
-- macOS 14.0+
-- Swift 5.9+
-- Xcode 15+
+| `PrimaryButton` | Primary action with loading state |
+| `SecondaryButton` | Outlined button |
+| `IconButton` | Circular SF Symbol button |
+| `ValidatedTextField` | Text field with error message |
+| `CardView` | Simple card container |
+| `ToastView` | Lightweight toast |
+| `SectionHeader` | Section title + subtitle |
 
 ---
 
 ## Installation
 
 ```swift
-dependencies: [
-    .package(url: "https://github.com/RknDEV1/swift-ui-kit.git", from: "0.1.0")
-]
+.package(url: "https://github.com/RknDEV1/swift-ui-kit.git", branch: "main")
 ```
 
-Or via Xcode:
-
-1. **File → Add Package Dependencies…**
-2. Enter `https://github.com/RknDEV1/swift-ui-kit.git`
-3. Add the package to your target
+Xcode: **File → Add Package Dependencies…** → branch **main**.
 
 ---
 
 ## Usage
 
-### Primary Button
-
 ```swift
-PrimaryButton("Continue", isLoading: false) {
-    // action
-}
-```
+PrimaryButton("Continue", isLoading: false) { }
+SecondaryButton("Cancel") { }
+IconButton(systemName: "gearshape") { }
 
-### Secondary Button
-
-```swift
-SecondaryButton("Cancel") {
-    // action
-}
-```
-
-### Validated Text Field
-
-```swift
-ValidatedTextField("Email", text: $email, errorMessage: emailError)
-ValidatedTextField("Password", text: $password, isSecure: true)
-```
-
-### Card View
-
-```swift
-CardView {
-    Text("Card content")
-}
-```
-
-### Toast View
-
-```swift
-ToastView("Saved successfully", systemImage: "checkmark.circle")
-```
-
-### Section Header
-
-```swift
-SectionHeader("Settings", subtitle: "Manage your preferences")
+ValidatedTextField("Email", text: $email, errorMessage: error)
+CardView { Text("Content") }
+ToastView("Saved", systemImage: "checkmark.circle")
+SectionHeader("Settings", subtitle: "Preferences")
 ```
 
 ---
-
-## Example Screen
-
-```swift
-struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
-    @State private var isLoading = false
-
-    var body: some View {
-        VStack(spacing: 20) {
-            SectionHeader("Welcome", subtitle: "Sign in to continue")
-            ValidatedTextField("Email", text: $email)
-            ValidatedTextField("Password", text: $password, isSecure: true)
-            PrimaryButton("Sign In", isLoading: isLoading) { }
-            SecondaryButton("Create Account") { }
-        }
-        .padding()
-    }
-}
-```
-
----
-
-## Project Structure
-
-```
-Sources/SwiftUIKit/
-├── Buttons/
-├── Inputs/
-├── Cards/
-├── Feedback/
-└── Layout/
-```
-
----
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
-MIT License. See [LICENSE](LICENSE).
+MIT
